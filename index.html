@@ -2,26 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>To-Do-List</title>
 </head>
 <body>
   <div class="container">
     <header>
-      <form>
+      <form id="first-form">
         <h1>Create Task</h1>
         <input class="txt-input" type="text" placeholder="Inter your task here...">
         <input class="btn-input" type="submit" value="submit">
       </form>
+        <small>Example:walking,painting</small>
     </header>
     <main>
         <h2>Tasks</h2>
         <h3>Filter Tasks</h3>
         <form>
             <input type="text" placeholder="Tasks...">
-            <small>Example:walking,painting</small>
         </form>
+        <div id="newHeading">
+        </div>
+
+        <div id="newTasks">
+        </div>
     </main>
     <footer>
         <button>Erase All</button>
@@ -29,5 +34,7 @@
   </div>
     <p>This project was coded by <a href="https://github.com/fatemehoseinii007">Fatemeh Sadat Hoseini</a>, is <a href="#">open-sourced on GitHub</a> and <a href="#">hosted on Netlify</a>
 </p>
+
+<script src="./script.js"></script>
 </body>
 </html>

@@ -53,7 +53,7 @@ main h2{
     color: #2E4053;
 }
 
-main small{
+header small{
     color: darkgray;
 }
 
@@ -94,4 +94,25 @@ p{
 p a{
     color: #283747;
     font-weight: bold;
+}
+
+#newTasks{
+    margin-top: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #283747;
+    border-left: 5px solid #2E4053;
+}
+
+.taskDiv{
+    margin-left: 1rem;
+}
+
+.header{
+    text-align: center;
+    border: 0;
+}
+
+.taskDiv{
+    margin-bottom: 1.5rem;
 }
