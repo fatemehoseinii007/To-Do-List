@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>To-Do-List</title>
 </head>
 <body>
-    <form>
-        <input type="text" placeholder="Inter your task here...">
-        <input type="submit" value="submit">
-    </form>
+  <div class="container">
+    <header>
+      <form>
+        <h1>Create Task</h1>
+        <input class="txt-input" type="text" placeholder="Inter your task here...">
+        <input class="btn-input" type="submit" value="submit">
+      </form>
+    </header>
     <main>
-        <h1>Tasks</h1>
+        <h2>Tasks</h2>
         <h3>Filter Tasks</h3>
         <form>
             <input type="text" placeholder="Tasks...">
+            <small>Example:walking,painting</small>
         </form>
     </main>
     <footer>
         <button>Erase All</button>
     </footer>
-    </div>
+  </div>
     <p>This project was coded by <a href="https://github.com/fatemehoseinii007">Fatemeh Sadat Hoseini</a>, is <a href="#">open-sourced on GitHub</a> and <a href="#">hosted on Netlify</a>
 </p>
 </body>
