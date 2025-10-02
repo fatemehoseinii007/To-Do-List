@@ -1,3 +1,5 @@
+// add button
+
 let selectForm=document.querySelector("#first-form")
 let textInput=document.querySelector(".txt-input")
 let newTasks=document.querySelector("#newTasks")
@@ -17,6 +19,13 @@ if(txtInput==""){
     createHeader.className="header"
     createHeader.textContent="please Enter something⌨"
 
+  new Typewriter(createHeader, {
+  strings: "please Enter something⌨",
+  autoStart: true,
+  delay: 70,
+  cursor:""
+});
+
     newHeading.appendChild(createHeader)
 } 
 
@@ -30,6 +39,15 @@ if (txtInput !== "") {
   }
 }
 
-
-
 selectForm.addEventListener("submit",newTask);
+
+// clear button
+
+let clearBtn=document.querySelector("#button")
+let footer=document.querySelector("footer")
+
+function clearAll(){
+taskDiv.remove()
+}
+
+clearBtn.addEventListener("click",clearAll)
