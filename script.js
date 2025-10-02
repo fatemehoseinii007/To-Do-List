@@ -32,7 +32,7 @@ if(txtInput==""){
 if (txtInput !== "") {
     let taskDiv = document.createElement("div");
     taskDiv.className = "taskDiv";
-    taskDiv.textContent = txtInput;
+    taskDiv.textContent = txtInput.toLowerCase();
 
     newTasks.appendChild(taskDiv);
     textInput.value = "";
@@ -44,10 +44,52 @@ selectForm.addEventListener("submit",newTask);
 // clear button
 
 let clearBtn=document.querySelector("#button")
-let footer=document.querySelector("footer")
 
 function clearAll(){
-taskDiv.remove()
+newTasks.textContent=""
 }
 
 clearBtn.addEventListener("click",clearAll)
+
+// filter button
+// let filterTxt=document.querySelector("main input")
+// let mainForm=document.querySelector("main form")
+
+// function filterTask(event){
+// event.preventDefault()
+// let filtering=filterTask.value.toLowerCase()
+
+// document.querySelectorAll(".taskDiv").forEach(function(text)
+// let taskContant=task.textContent;
+
+//   if(item.indexOf(Number)!==-1){
+// taskDiv.classList.add("d-flex")
+//   }else{
+// taskDiv.classList.remove("d-flex")
+// taskDiv.style.display="none"
+//   }
+// )};
+
+// filterTxt.addEventListener("focus",filterTask)
+
+let filterInput = document.querySelector("main input")
+
+function filterTasks() {
+    let filterText = filterInput.value.trim().toLowerCase();
+    
+    let allTasks = document.querySelectorAll(".taskDiv");
+    
+    allTasks.forEach(function(task) {
+        let taskContent = task.textContent.toLowerCase();
+        
+        // اگر متن فیلتر خالیه یا تسک شامل متن فیلتر هست، نشون بده
+        if (filterText === "" || taskContent.includes(filterText)) {
+            task.style.display = "block";
+        } else {
+            // در غیر این صورت مخفی کن
+            task.style.display = "none";
+        }
+    });
+}
+
+filterInput.addEventListener("input",filterTasks)
