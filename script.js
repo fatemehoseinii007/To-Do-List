@@ -36,7 +36,37 @@ if (txtInput !== "") {
 
     newTasks.appendChild(taskDiv);
     textInput.value = "";
-  }
+
+    let deleteIcon=document.createElement("div")
+    deleteIcon.classList="delete"
+    deleteIcon.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>`
+
+    deleteIcon.addEventListener("click",function (){
+        taskDiv.remove()
+    })
+
+taskDiv.appendChild(deleteIcon);
+
+    let createCheckbox=document.createElement("input")
+    createCheckbox.type="checkbox"
+    createCheckbox.classList="checkBox"
+
+    createCheckbox.addEventListener("change",function(){
+        taskDiv.classList.toggle("complete",this.checked)
+    })
+
+    taskDiv.appendChild(createCheckbox)
+
+    let mainContainer=document.createElement("div")
+    mainContainer.classList="main-container"
+    mainContainer.appendChild(createCheckbox)
+    mainContainer.appendChild(deleteIcon)
+    
+    taskDiv.appendChild(mainContainer)
+
+}
 }
 
 selectForm.addEventListener("submit",newTask);
@@ -51,26 +81,7 @@ newTasks.textContent=""
 
 clearBtn.addEventListener("click",clearAll)
 
-// filter button
-// let filterTxt=document.querySelector("main input")
-// let mainForm=document.querySelector("main form")
-
-// function filterTask(event){
-// event.preventDefault()
-// let filtering=filterTask.value.toLowerCase()
-
-// document.querySelectorAll(".taskDiv").forEach(function(text)
-// let taskContant=task.textContent;
-
-//   if(item.indexOf(Number)!==-1){
-// taskDiv.classList.add("d-flex")
-//   }else{
-// taskDiv.classList.remove("d-flex")
-// taskDiv.style.display="none"
-//   }
-// )};
-
-// filterTxt.addEventListener("focus",filterTask)
+//filter tasks
 
 let filterInput = document.querySelector("main input")
 
@@ -82,14 +93,15 @@ function filterTasks() {
     allTasks.forEach(function(task) {
         let taskContent = task.textContent.toLowerCase();
         
-        // اگر متن فیلتر خالیه یا تسک شامل متن فیلتر هست، نشون بده
-        if (filterText === "" || taskContent.includes(filterText)) {
-            task.style.display = "block";
-        } else {
-            // در غیر این صورت مخفی کن
-            task.style.display = "none";
-        }
+  if (filterText === "" || taskContent.includes(filterText)) {
+    task.style.opacity = "1";
+    task.style.transform = "scale(1)";
+} else {
+    task.style.opacity = "0.3";
+    task.style.transform = "scale(0.97)";
+}
     });
+
 }
 
 filterInput.addEventListener("input",filterTasks)

@@ -106,6 +106,10 @@ p a{
 
 .taskDiv{
     margin-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    align-items: center;
 }
 
 .header{
@@ -113,6 +117,26 @@ p a{
     border: 0;
 }
 
-.taskDiv{
-    margin-bottom: 1.5rem;
+.delete{
+    width: 2.5rem;
+    height: auto;
+    padding-right: 1.5rem;
+}
+
+.checkBox{
+    width: 1.5rem;
+}
+
+.complete{
+    text-decoration: line-through;
+    opacity: 0.3;
+    transform: scale(0.97);
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: baseline;
+    gap: 1.5rem;
 }
